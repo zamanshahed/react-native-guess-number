@@ -91,7 +91,6 @@ const StartGameScreen = (props) => {
               <Button
                 style={styles.button}
                 title="Confirm"
-                onPress={() => {}}
                 color={Colors.accent}
                 onPress={confirmInputHandler}
               />
