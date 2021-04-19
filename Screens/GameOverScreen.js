@@ -13,11 +13,11 @@ const GameOverScreen = (props) => {
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          // source={require("../assets/success.png")}    //for local image
-          source={{
-            uri:
-              "https://cdn.pixabay.com/photo/2017/02/01/23/26/mountain-2031682_1280.jpg",
-          }} //for network image
+          source={require("../assets/success.png")} //for local image
+          // source={{
+          //   uri:
+          //     "https://cdn.pixabay.com/photo/2017/02/01/23/26/mountain-2031682_1280.jpg",
+          // }} //for network image
           resizeMode="cover"
         />
       </View>
