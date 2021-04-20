@@ -23,7 +23,7 @@ const GameScreen = (props) => {
     generateRandomNumber(1, 100, props.userChoice)
   );
 
-  const [rounds, setRounds] = useState(0);
+  const [pastRounds, setPastRounds] = useState([]);
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
 
@@ -57,7 +57,8 @@ const GameScreen = (props) => {
       currentGuess
     );
     setCurrentGuess(nextNumber);
-    setRounds((curRounds) => curRounds + 1);
+    // setRounds((curRounds) => curRounds + 1);
+    setPastRounds((curPastGuess) => [nextNumber, ...curPastGuess]);
   };
 
   return (
