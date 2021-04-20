@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import NumberContainer from "../Components/NumberContainer";
@@ -31,7 +31,7 @@ const GameScreen = (props) => {
 
   useEffect(() => {
     if (currentGuess === userChoice) {
-      onGameOver(rounds);
+      onGameOver(pastRounds.length);
     }
   }, [currentGuess, userChoice, onGameOver]);
 
@@ -73,6 +73,13 @@ const GameScreen = (props) => {
           <Ionicons name="md-add" size={24} color="white" />
         </MainButton>
       </Card>
+      <ScrollView>
+        {pastRounds.map((guess) => (
+          <View key={guess}>
+            <Text>{guess}</Text>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 };
