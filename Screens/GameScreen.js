@@ -20,7 +20,7 @@ const generateRandomNumber = (min, max, exclude) => {
 };
 
 const renderListItem = (vlaue, numOfRounds) => (
-  <View key={vlaue} style={styles.listItem}>
+  <View key={Math.random()} style={styles.listItem}>
     <BodyText># {numOfRounds}</BodyText>
     <BodyText>{vlaue}</BodyText>
   </View>
@@ -82,7 +82,7 @@ const GameScreen = (props) => {
         </MainButton>
       </Card>
       <View style={styles.listContainer}>
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.listContent}>
           {pastRounds.map((guess, index) =>
             renderListItem(guess, pastRounds.length - index)
           )}
@@ -109,6 +109,11 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "80%",
   },
+  listContent: {
+    flexGrow: 1,
+    alignItems: "center",
+    justifyContent: "flex-end",
+  },
   listItem: {
     borderColor: "#ccc",
     borderWidth: 2,
@@ -117,6 +122,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "row",
     justifyContent: "space-around",
+    width: "60%",
   },
 });
 
