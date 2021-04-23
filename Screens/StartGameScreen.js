@@ -111,8 +111,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   inputContainer: {
-    width: 300,
-    maxWidth: "80%",
+    width: '80%',
+    minWidth: 300,
     alignItems: "center",
   },
   buttonContainer: {
