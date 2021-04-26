@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   StyleSheet,
@@ -24,6 +24,9 @@ const StartGameScreen = (props) => {
   const [userNumber, setUserNumber] = useState("");
   const [confirmed, setConfirmed] = useState(false);
   const [selectedNumber, setSelectedNuber] = useState();
+  const [buttinWidth, setButtonWidth] = useState(
+    Dimensions.get("window").width / 4
+  );
 
   const numberInputHandler = (inputText) => {
     setUserNumber(inputText.replace(/[^0-9]/g, ""));
@@ -33,6 +36,17 @@ const StartGameScreen = (props) => {
     setUserNumber("");
     setConfirmed(false);
   };
+
+  useEffect(() => {
+    const updateLayout = () => {
+      setButtonWidth(Dimensions.get("window").width / 4);
+    };
+
+    Dimensions.addEventListener("change", updateLayout);
+    return () => {
+      Dimensions.removeEventListener("change", updateLayout);
+    };
+  });
 
   const confirmInputHandler = () => {
     const chosenNumber = parseInt(userNumber);
