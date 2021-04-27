@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    paddingVertical: 10,
   },
   text: {
     textAlign: "center",
@@ -67,8 +68,8 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   imageContainer: {
-    width: Dimensions.get("window").width * 0.7,
-    height: Dimensions.get("window").width * 0.7,
+    width: Dimensions.get("window").width * 0.6,
+    height: Dimensions.get("window").width * 0.6,
     borderRadius: (Dimensions.get("window").width * 0.7) / 2,
     borderWidth: 2,
     borderColor: "black",
