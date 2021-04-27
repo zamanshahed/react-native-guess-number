@@ -3,7 +3,7 @@
     "name": "react-native-guess-number",
     "slug": "react-native-guess-number",
     "version": "1.0.0",
-    "orientation": "auto",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
